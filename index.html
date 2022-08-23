@@ -7,8 +7,12 @@
     <title>Document</title>
 </head>
 <script>
+
+var realtimeBART
+
 function reqListener () {
-  console.log(this.response);
+  realtimeBART = this.response
+  // console.log(this.response);
 }
 
 const req = new XMLHttpRequest();
