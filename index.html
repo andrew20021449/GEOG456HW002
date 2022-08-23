@@ -7,22 +7,14 @@
     <title>Document</title>
 </head>
 <script>
-  const data = null;
+function reqListener () {
+  console.log(this.responseText);
+}
 
-const xhr = new XMLHttpRequest();
-xhr.withCredentials = true;
-
-xhr.addEventListener("readystatechange", function () {
-	if (this.readyState === this.DONE) {
-		console.log(this.responseText);
-	}
-});
-
-xhr.open("GET", "https://community-nyc-subway-data.p.rapidapi.com/times?hour=10&minute=25");
-xhr.setRequestHeader("X-RapidAPI-Key", "1929c24681msh9a3717776709451p17a59fjsnb472b59fd597");
-xhr.setRequestHeader("X-RapidAPI-Host", "community-nyc-subway-data.p.rapidapi.com");
-
-xhr.send(data);
+const req = new XMLHttpRequest();
+req.addEventListener("load", reqListener);
+req.open("GET", "http://api.bart.gov/api/etd.aspx?cmd=etd&orig=12th&key=MW9S-E7SL-26DU-VV8V&json=y");
+req.send();
 </script>
 <body>
     
