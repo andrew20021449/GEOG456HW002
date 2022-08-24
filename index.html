@@ -19,20 +19,7 @@ tr:nth-child(even) {
 }
 </style>
 </head>
-<script>
-    var Senators
-
-function reqListener () {
-  Senators = this.response
-  // console.log(this.response);
-}
-
-const req = new XMLHttpRequest();
-req.addEventListener("load", reqListener);
-req.open("GET", "https://www.govtrack.us/api/v2/role?current=true&role_type=senator");
-req.responseType = 'json'
-req.send();
-</script>
+<script src="Senators.js"></script>
 <body>
 
 <h2>Senators</h2>
