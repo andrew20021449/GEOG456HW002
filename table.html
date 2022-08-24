@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+</head>
+<script>
+    var Senators
+
+function reqListener () {
+  Senators = this.response
+  // console.log(this.response);
+}
+
+const req = new XMLHttpRequest();
+req.addEventListener("load", reqListener);
+req.open("GET", "https://www.govtrack.us/api/v2/role?current=true&role_type=senator");
+req.responseType = 'json'
+req.send();
+</script>
+<body>
+
+<h2>Senators</h2>
+
+<table id="Senator table">
+  <tr>
+    <th>Name</th>
+    <th>Party</th>
+  </tr>
+</table>
+
+</body>
+<script>
+    var x = document.getElementById('Senator table')
+
+    for (var i=0; i<Senators.objects.length; i++) {
+        var NewRow = document.createElement('tr');
+        var NewCell1 = document.createElement('td');
+        var NewCell2 = document.createElement('td');
+        NewCell1.innerText = Senators.objects[i].person.lastname;
+        NewCell2.innerText = Senators.objects[i].party;
+        NewRow.append(NewCell1)
+        NewRow.append(NewCell2)
+        x.append(NewRow)
+    }
+</script>
+</html>
