@@ -17,6 +17,19 @@ td, th {
 tr:nth-child(even) {
   background-color: #dddddd;
 }
+
+.Republican {
+  background-color: red;
+}
+
+.Democrat {
+  background-color: blue;
+}
+
+.Independent {
+  background-color: beige ;
+}
+
 </style>
 </head>
 <script src="Senators.js"></script>
@@ -42,9 +55,9 @@ tr:nth-child(even) {
     NewCell1.innerText = Senators.objects[i].person.lastname;
     NewCell2.innerText = Senators.objects[i].party;
 
-    if(Senators.objects[i].party == 'Republican') {NewCell2.style.backgroundColor = 'red'}
-    if(Senators.objects[i].party == 'Democrat') {NewCell2.style.backgroundColor = 'blue'}
-    if(Senators.objects[i].party == 'Independent') {NewCell2.style.backgroundColor = 'yellow'}
+    // if(Senators.objects[i].party == 'Republican') {NewCell2.style.backgroundColor = 'red'}
+    // if(Senators.objects[i].party == 'Democrat') {NewCell2.style.backgroundColor = 'blue'}
+    // if(Senators.objects[i].party == 'Independent') {NewCell2.style.backgroundColor = 'yellow'}
     NewRow.append(NewCell1)
     NewRow.append(NewCell2)
     x.append(NewRow)
