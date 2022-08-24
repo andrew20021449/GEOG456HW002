@@ -46,17 +46,17 @@ req.send();
 
 </body>
 <script>
-    var x = document.getElementById('Senator table')
+  var x = document.getElementById('Senator table')
 
-    for (var i=0; i<Senators.objects.length; i++) {
-        var NewRow = document.createElement('tr');
-        var NewCell1 = document.createElement('td');
-        var NewCell2 = document.createElement('td');
-        NewCell1.innerText = Senators.objects[i].person.lastname;
-        NewCell2.innerText = Senators.objects[i].party;
-        NewRow.append(NewCell1)
-        NewRow.append(NewCell2)
-        x.append(NewRow)
-    }
+  for (var i=0; i<Senators.objects.length; i++) {
+    var NewRow = document.createElement('tr');
+    var NewCell1 = document.createElement('td');
+    var NewCell2 = document.createElement('td');
+    NewCell1.innerText = Senators.objects[i].person.lastname;
+    NewCell2.innerText = Senators.objects[i].party;
+    NewRow.append(NewCell1)
+    NewRow.append(NewCell2)
+    x.append(NewRow)
+  }
 </script>
 </html>
